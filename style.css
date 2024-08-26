@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s;
+}
+
+nav .logo {
+  margin-right: auto; /* Pushes the logo to the left */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  font-size: large;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+  position: relative;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s, box-shadow 0.3s;
+}
+
+.logo:hover {
+  color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+.home, .about, .education-section, .contact-section {
+  background-color: black;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: -150px;
+}
+
+.home-content {
+  max-width: 800px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.profile-image:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+  box-shadow: 1px 1px 20px #007bff;
+}
+
+.home-content h1, .home-content p {
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.home-content h1:hover {
+  transform: translateY(-5px);
+  color: #007bff;
+}
+
+.home-content p {
+  font-size: 24px;
+}
+
+.home-content p:hover {
+  color: #007bff;
+  transform: translateY(-5px);
+}
+
+.home-content a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.home-content a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #007bff;
+}
+
+.about {
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.about h2:hover {
+  color: #007bff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  transition: color 0.3s, box-shadow 0.3s;
+}
+
+.about p:hover {
+  color: #007bff;
+}
+
+.education-section {
+  color: white;
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: -50px; 
+  animation: fadeIn 2s ease-in-out;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease-in-out;
+  color: white;
+}
+
+.section-title:hover {
+  color: #007bff;
+}
+
+.education-item {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 20px #007bff;
+}
+
+.education-item h3 {
+  font-size: 1.5em;
+  color: white; 
+}
+
+.education-item h3:hover {
+  color: #007bff;
+}
+
+.education-item p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #cccccc;
+  transition: color 0.3s;
+}
+
+.education-item p:hover {
+  color: #007bff; /* Updated color */
+}
+
+.skills-section {
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
+.skills-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.skills-section h2:hover {
+  color: #007bff;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill {
+  background-color: rgb(4, 58, 76);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px #007bff;
+}
+
+.skill h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.skill h3:hover {
+  color: royalblue;
+}
+
+.skill p {
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.5;
+  color: white;
+  transition: color 0.3s;
+}
+
+.skill p:hover {
+  color: #007bff;
+}
+
+.contact-section {
+  background-color: black;
+  padding: 50px 0;
+  text-align: center;
+  color: white;
+  margin-top: 22px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.contact-icons {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-icon {
+  color: white;
+  overflow: hidden;
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-icon:hover {
+  color: #007bff;
+  overflow: hidden;
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.contact-section a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  overflow: hidden;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.contact-section a:hover {
+  color: #007bff;
+  overflow: hidden;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
