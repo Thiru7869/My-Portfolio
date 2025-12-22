@@ -1,23 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-body {
-  font-family: 'Nunito Sans', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  transition: background-color 0.3s, color 0.3s;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-/* styles.css */
+body {
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
 
+/* Navbar styles */
 .navbar {
     background-color: black;
     position: sticky;
     top: 0;
     z-index: 1000; 
-    width: 100%; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -48,85 +57,33 @@ body {
     width: 100%;
 }
 
-.navbar-nav .nav-item {
-    opacity: 1;
-    transform: none;
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
-.navbar-collapse {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.navbar-collapse.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@media (min-width: 992px) {
-    .navbar-collapse {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        display: flex !important;
-    }
-    .navbar-toggler {
-        display: none;
-    }
-}
-
-.navbar-dark .navbar-collapse {
+/* Home Section */
+.home, .about, .education-section, .skills-section, .contact-section {
     background-color: black;
-    padding: 10px;
-}
-
-.navbar-toggler {
-    border-color: white;
-    background-color: transparent;
-}
-
-.navbar-toggler-icon {
-    display: block;
-    width: 30px;
-    height: 22px;
-    position: relative;
-    border: none;
-}
-
-.navbar-toggler-icon::after {
-    bottom: 0;
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon div {
-    opacity: 0;
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
-    bottom: 50%;
-    transform: translateY(50%) rotate(-45deg);
-}
-
-.home, .about, .education-section, .contact-section {
-    background-color: black;
+    margin: 0;
+    padding-top: 0; /* removed extra space */
+    padding-bottom: 60px;
 }
 
 .home {
-    height: 100vh;
+    min-height: calc(100vh - 60px); /* full viewport minus navbar height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    margin-bottom: -150px;
+    margin-top: 0; /* remove any margin pushing down */
 }
 
 .home-content {
-    max-width: 800px;
+    max-width: 700px;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -141,9 +98,8 @@ body {
 }
 
 .profile-image:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
-    transform: scale(1.05);
     box-shadow: 1px 1px 20px #007bff;
+    transform: scale(1.05);
 }
 
 .home-content h1, .home-content p {
@@ -158,7 +114,7 @@ body {
 
 .home-content h1:hover {
     transform: translateY(-5px);
-    color: #007bff;
+    color: lime;
 }
 
 .home-content p {
@@ -166,7 +122,7 @@ body {
 }
 
 .home-content p:hover {
-    color: #007bff;
+    color: lime;
     transform: translateY(-5px);
 }
 
@@ -182,240 +138,220 @@ body {
     text-shadow: 0 0 5px #007bff;
 }
 
-
+/* About Section */
 .about {
-    padding: 100px 20px;
+    padding: 40px 20px;
     text-align: center;
     color: white;
-    margin-top: 0;
     animation: fadeIn 2s ease-in-out;
-  }
-  
-  .about-content {
-    max-width: 800px;
+}
+
+.about-content {
+    max-width: 700px;
     margin: 0 auto;
-  }
-  
-  .about-content:hover {
+}
+
+.about-content:hover {
     transform: translateY(-5px);
-  }
-  
-  .about h2 {
+}
+
+.about h2 {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
     transition: color 0.3s, text-shadow 0.3s;
-  }
-  
-  .about h2:hover {
-    color: #007bff;
+}
+
+.about h2:hover {
+    color: lime;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-  }
-  
-  .about p {
+}
+
+.about p {
     font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-bottom: 15px;
     font-family: 'Nunito Sans', sans-serif;
     transition: color 0.3s, box-shadow 0.3s;
-  }
-  
-  .about p:hover {
-    color: #007bff;
-  }
-  
-  .education-section {
+}
+
+.about p:hover {
+    color: lime;
+}
+
+/* Education Section */
+.education-section {
     color: white;
-    padding: 50px 20px;
+    padding: 40px 20px;
     border-radius: 10px;
-    margin: 20px auto;
     max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: fadeIn 2s ease-in-out;
-  }
-  
-  .education-container {
+}
+
+.education-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: -50px; 
+    margin-top: 0;
     animation: fadeIn 2s ease-in-out;
-  }
-  
-  .section-title {
+    width: 100%;
+    align-items: center;
+}
+
+.section-title {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     animation: slideIn 1s ease-in-out;
     color: white;
-  }
-  
-  .section-title:hover {
-    color: #007bff;
-  }
-  
-  .education-item {
+}
+
+.section-title:hover {
+    color: lime;
+}
+
+.education-item {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .education-item:hover {
+    width: 100%;
+    max-width: 600px;
+}
+
+.education-item:hover {
     transform: scale(1.05);
     box-shadow: 1px 1px 20px #007bff;
-  }
-  
-  .education-item h3 {
+}
+
+.education-item h3 {
     font-size: 1.5em;
     color: white; 
-  }
-  
-  .education-item h3:hover {
-    color: #007bff;
-  }
-  
-  .education-item p {
+}
+
+.education-item h3:hover {
+    color: lime;
+}
+
+.education-item p {
     font-size: 1em;
     line-height: 1.5;
     color: #cccccc;
     transition: color 0.3s;
-  }
-  
-  .education-item p:hover {
-    color: #007bff; /* Updated color */
-  }
-  
-  .skills-section {
-    padding: 50px 20px;
+}
+
+.education-item p:hover {
+    color: lime;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 40px 20px;
     text-align: center;
     color: white;
-    margin-top: 20px;
-  }
-  
-  .skills-section h2 {
+}
+
+.skills-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #ffffff;
     transition: color 0.3s;
-  }
-  
-  .skills-section h2:hover {
-    color: #007bff;
-  }
-  
-  .skills-list {
+}
+
+.skills-section h2:hover {
+    color: lime;
+}
+
+.skills-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .skill {
+    gap: 15px;
+}
+
+.skill {
     background-color: rgb(4, 58, 76);
     border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-    width: 250px;
+    padding: 15px;
+    width: 180px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .skill:hover {
+}
+
+.skill:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px #007bff;
-  }
-  
-  .skill h3 {
-    font-size: 1.5em;
+}
+
+.skill h3 {
+    font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: 700;
     color: white;
-  }
-  
-  .skill h3:hover {
-    color: royalblue;
-  }
-  
-  .skill p {
-    font-size: 1em;
+}
+
+.skill h3:hover {
+    color: lime;
+}
+
+.skill p {
+    font-size: 0.9em;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.4;
     color: white;
     transition: color 0.3s;
-  }
-  
-  .skill p:hover {
-    color: #007bff;
-  }
-  
-  
-  
+}
+
+.skill p:hover {
+    color: lime;
+}
+
+/* Contact Section */
 .contact-section {
-    background-color: black;
-    padding: 50px 0;
+    padding: 40px 20px;
     text-align: center;
     color: white;
-    margin-top: 22px;
     animation: fadeIn 2s ease-in-out;
-  }
-  
-  .contact-icons {
+}
+
+.contact-icons {
     display: flex;
-    overflow: hidden;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
-  }
-  
-  .contact-icon {
+}
+
+.contact-icon {
     color: white;
-    overflow: hidden;
     font-size: 24px;
     transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .contact-icon:hover {
+}
+
+.contact-icon:hover {
     color: #007bff;
-    overflow: hidden;
     transform: scale(1.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  }
-  
-  .contact-section a {
+}
+
+.contact-section a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    overflow: hidden;
     transition: color 0.3s, text-shadow 0.3s;
-  }
-  
-  .contact-section a:hover {
+}
+
+.contact-section a:hover {
     color: #007bff;
-    overflow: hidden;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateY(50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .btn {
+}
+
+/* Buttons */
+.btn {
     background-color: blue;
     color: white;
     padding: 12px 24px;
@@ -430,3 +366,194 @@ body {
 .btn:hover {
     background-color: darkblue;
 }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+    }
+
+    .about p {
+        font-size: 14px;
+    }
+
+    .education-item h3 {
+        font-size: 1.2em;
+    }
+
+    .education-item p {
+        font-size: 0.9em;
+    }
+
+    .skills-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .skill {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    .contact-icons {
+        gap: 15px;
+    }
+
+    .home, .about, .education-section, .skills-section, .contact-section {
+        padding-top: 20px; /* reduced for mobile */
+        padding-bottom: 30px;
+    }
+}
+
+/* ===== NAVBAR CENTER FIX (DESKTOP ONLY) ===== */
+@media (min-width: 992px) {
+    .navbar .container-fluid {
+        justify-content: center !important;
+    }
+
+    .navbar-nav {
+        margin-left: 0 !important;
+    }
+}
+
+/* ===== GLOBAL SPACE FIX ===== */
+.home {
+    height: auto !important;
+    min-height: calc(100vh - 60px); /* minus navbar height */
+    padding-bottom: 20px !important;
+    margin-top: 0 !important;
+}
+
+.about {
+    padding-top: 20px !important;
+}
+
+.home, 
+.about, 
+.education-section, 
+.skills-section, 
+.contact-section {
+    margin: 0 !important;
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: blue;
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    z-index: 9999;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: darkblue;
+    transform: scale(1.1);
+}
+
+/* ===== MOBILE SPACE FIX ===== */
+@media (max-width: 768px) {
+    .home {
+        padding-bottom: 10px !important;
+        padding-top: 0 !important; /* remove top space */
+    }
+
+    .about {
+        padding-top: 10px !important;
+    }
+}
+
+/* ================================================= */
+/* ========== EXTRA SMOOTH ANIMATIONS (ADDED) ======= */
+/* ================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar subtle slide-in */
+.navbar {
+    animation: navbarDrop 0.8s ease-out;
+}
+
+@keyframes navbarDrop {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Section reveal effect */
+.home,
+.about,
+.education-section,
+.skills-section,
+.contact-section {
+    animation: sectionReveal 1.2s ease-in-out;
+}
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button pulse */
+.btn:hover {
+    animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
